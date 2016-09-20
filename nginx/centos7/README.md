@@ -1,13 +1,16 @@
 dockerfiles-centos-nginx
 ========================
 
-CentOS 7 dockerfile for nginx
+CentOS 7 Dockerfile for nginx, This Dockerfile uses https://www.softwarecollections.org/en/scls/rhscl/rh-nginx18/
+
+error_log and access_log will go to STDOUT.
+
 
 To build:
 
 Copy the sources down -
 
-    # docker build -rm -t <username>/nginx:centos7 .
+    # docker build --rm --tag <username>/nginx:centos7 .
 
 To run:
 
@@ -16,4 +19,3 @@ To run:
 To test:
 
     # curl http://localhost
-

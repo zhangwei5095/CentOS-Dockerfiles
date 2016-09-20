@@ -1,14 +1,12 @@
-# "ported" by Adam Miller <maxamillion@fedoraproject.org> from
-#   https://github.com/fedora-cloud/Fedora-Dockerfiles
-#
-# Originally written for Fedora-Dockerfiles by
-#   "Scott Collier" <scollier@redhat.com>
+FROM centos:latest
+MAINTAINER http://www.centos.org
+LABEL Vendor="CentOS"
+LABEL License=GPLv2
+LABEL Version=2.4.6-31
 
-FROM centos:centos7
-MAINTAINER The CentOS Project <cloud-ops@centos.org>
+RUN yum -y update && yum clean all
+RUN yum -y install httpd && yum clean all
 
-RUN yum -y update; yum clean all
-RUN yum -y install httpd; yum clean all
 EXPOSE 80
 
 # Simple startup script to avoid some issues observed with container restart 
